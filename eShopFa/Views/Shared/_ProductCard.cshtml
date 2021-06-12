@@ -1,0 +1,27 @@
+﻿@model eShopFa.Models.ViewModels.ProductViewModel
+
+<div class="col-lg-3 course-col">
+    <div class="card">
+        <a asp-controller="Home" asp-action="Detail" asp-route-id="@Model.ProductId" style="text-decoration: none">
+            <img src="/img/@(Model.ImageName).jpg" height="160" width="160" class="card-img-top img-thumbnail" />
+            <div class="card-body">
+                <h5 class="card-title text-dark">@Model.ProductName</h5>
+                @{
+                    if (Model.IsExist)
+                    {
+                        <p class="btn btn-primary mb-0"> @Model.Price تومان </p>
+                    }
+                    else
+                    {
+                        <p class="btn btn-warning mb-0"> ناموجود </p>
+                    }
+                }
+                <hr />
+                <div class="p-0 m-0 ">
+                    <p class="p-0 m-1 text-dark float-right"><i class="bi bi-star-fill text-warning"></i> 4.4</p>
+                    <p class="text-dark p-0 m-1 float-left" title="مورد تایید اسلام سیتی"> <i class="bi bi-check-circle-fill text-success"></i> </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div> 

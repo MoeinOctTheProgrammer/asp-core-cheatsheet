@@ -1,0 +1,27 @@
+﻿@model eShopFa.Models.ViewModels.DetailViewModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="text-center">
+    <h1 class="display-5">@Model.Product.ProductName</h1>
+    <hr />
+    <img src="@($"/img/{Model.Product.Id}.jpg")"
+         alt="@Model.Product.ProductName"
+         class="img-thumbnail" />
+    <p class="py-5 text-justify">@Model.Product.Description</p>
+    <p>قیمت : @Model.BestPrice.CheapestPrice</p>
+    <dl>
+        <dt><a>@Model.Category.CategoryName</a></dt>
+        <dd>@Model.Category.CategoryDescription</dd>
+    </dl>
+    <div>
+        <a class="btn btn-primary"
+           asp-controller="Home"
+           asp-action="AddToCart"
+           asp-route-productId="@Model.Product.Id">افزودن به سبد خرید</a>
+    </div>
+</div>
+
+
+

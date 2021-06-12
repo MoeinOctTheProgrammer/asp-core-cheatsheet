@@ -1,0 +1,25 @@
+﻿@model List<Category>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h2>دسته بندی ها</h2>
+<hr />
+<div>
+    @{
+        foreach (Category item in Model)
+        {
+
+            <div class="card" style="width: 18rem;">
+                <img src="/img/ca-@(item.CategoryId).jpg" class="card-img-top" alt="تصویر">
+                <div class="card-body">
+                    <h5 class="card-title">@item.CategoryName</h5>
+                    <p class="card-text">@item.CategoryDescription</p>
+                    <a asp-controller="Home" asp-action="Category" asp-route-CategoryId="@item.CategoryId" class="btn btn-primary">دیدن محصولات</a>
+                </div>
+            </div>
+
+        }
+    }
+</div>

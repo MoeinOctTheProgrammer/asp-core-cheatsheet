@@ -1,0 +1,18 @@
+﻿@model List<eShopFa.Models.ViewModels.ProductViewModel>
+@{
+    ViewData["Title"] = "صفحه اصلی";
+}
+
+<div class="text-center ">
+    <h1 class="h2">به اسلام سیتی خوش آمدید</h1>
+    <p>سریع ترین فروشگاه اینترنتی ساخته شده مخصوص ساکنین اسلامشهر</p>
+    <hr />
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <partial name="_ProductCard" model="@item" />
+        }
+    </div>
+
+</div>

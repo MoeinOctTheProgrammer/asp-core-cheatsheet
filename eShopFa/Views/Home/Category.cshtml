@@ -1,0 +1,17 @@
+﻿@model List<eShopFa.Models.ViewModels.ProductViewModel>
+
+@{
+    ViewData["Title"] = "Category";
+}
+
+<h1>محصولات</h1>
+<hr />
+<div class="text-center">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <partial name="_ProductCard" model="@item" />
+        }
+    </div>
+</div>
+
